@@ -12,13 +12,13 @@
     <header class="text-gray-600 body-font bg-[#E6F7EC]">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-green-500 rounded-full" viewBox="0 0 24 24">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
-            <span class="ml-3 text-xl">HappyLink</span>
+            <img src="{{url_for('static', filename = 'images/mentis.png')}}" width="24px" height="24px" alt="">
+            <span class="ml-3 text-xl">MantisConnect</span>
           </a>
           <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
             <a class="mr-5 hover:text-gray-900">Contact Counsellor</a>
+            <a class="mr-5 hover:text-gray-900">VHelp</a>
+            <a class="mr-5 hover:text-gray-900">Mentor</a>
           </nav>
           <button class="px-[12px] py-[7px] inline-flex items-center text-white bg-green-500 border-0 py-1 px-3 focus:outline-none hover:bg-green-700 rounded-[10px] text-base mt-4 md:mt-0">Check Mood
             <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
@@ -33,26 +33,274 @@
             <section class="text-gray-600 body-font hero-section">
                 <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
                   <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-                    <h1 class="title-font text-2xl sm:text-xl md:text-5xl lg:5xl mb-4 font-medium text-gray-900">Therapy That Works
-                      <br class="hidden lg:inline-block"><span>Because we make</span>
-                      <br>it Work For you.
+                    <h1 class="title-font text-2xl sm:text-xl md:text-5xl mb-1 font-medium text-gray-900">Therapy That Works</h1>
+                      <h1 class="title-font text-2xl sm:text-xl md:text-5xl mb-1 font-medium text-gray-900"><span>Because we make</span></h1>
+                      <h1 class="title-font text-2xl sm:text-xl md:text-5xl mb-4 font-medium text-gray-900">it Work For you.</h1>
                     </h1>
-                    <p class="mb-8 leading-relaxed">Nurture Your Mind with Health Connect! Our platform is dedicated to enhancing mental well-being. Explore mindfulness techniques, expert insights, and a supportive community, empowering you on your path to a healthier mind. Elevate your mental health journey with Health Connect today!</p>
+                    <p class="mb-8 leading-relaxed text-[16px]">Nurture Your Mind with Health Connect! Our platform is dedicated to enhancing mental well-being. Explore mindfulness techniques, expert insights, and a supportive community, empowering you on your path to a healthier mind. Elevate your mental health journey with Health Connect today!</p>
                     <div class="flex justify-center">
-                      <button class="inline-flex text-white rounded-xl bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 text-lg">Check your Mood
+                      <button class="inline-flex text-white rounded-md bg-green-500 shadow-sm border-0 py-[10px] px-[14px] focus:outline-none hover:bg-green-600 text-lg">Check Mood →
                       </button>
-                      <button class="ml-4 inline-flex py-2 px-6 focus:outline-none rounded text-lg">Explore Counsellors</button>
+                      <button class="ml-4 inline-flex py-[10px] px-[14px] focus:outline-none rounded text-lg">Explore Counsellors</button>
                     </div>
                   </div>
                   <div class="lg:max-w-lg lg:w-full md:w-2/3 w-5/6">
-                    <!-- <img class="object-cover object-center rounded" alt="hero" src="{{url_for('static',filename='images/badagreendimag.png')}}"> -->
+                    <img class="object-cover object-center rounded" alt="hero" src="{{url_for('static',filename='images/badagreendimag.png')}}">
 
-                    <video src="{{url_for('static',filename='images/connecting.mp4')}}"></video>
+                    <!-- <video src="{{url_for('static',filename='images/connecting.mp4')}}"></video> -->
                   </div>
                 </div>
               </section>
         </div>
+
+        <div>
+
+        </div>
+
+        <section class = "hero-section">
+            <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-start">
+                <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+                    <h1 class = "text-5xl text-gray-800">Why Us?</h1>
+                    <p class = "mt-5 text-gray-600">We use surveys and machine learning to assess your mental health. If needed, we connect you with counselors for support.</p>
+                </div>
+
+                <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-left">
+                    <div>
+                        <h1 class = "md:ml-[19rem] text-3xl mb-1 hehe">
+                            <ion-icon style="margin-right: 0.5rem; " name="flash"></ion-icon>
+                            Fast and Efficient
+                        </h1>
+                        <p class="md:ml-[21.4rem] mb-[100px]">Extreme Fast service with response time less than 5 sec</p>
+                    </div>
+
+                    <div>
+                        <h1 class = "md:ml-[19rem] text-3xl mb-1 hehe">
+                            <ion-icon style="margin-right: 0.5rem; " name="lock-closed"></ion-icon>
+                            Secure and Private
+                        </h1>
+                        <p class="md:ml-[21.5rem] mb-[100px]">We use BlockChain Technology to keep data Secure and tamperproof</p>
+                    </div>
+
+                    <div>
+                        <h1 class = "md:ml-[19rem] text-3xl mb-1 hehe">
+                            <ion-icon style="margin-right: 0.5rem; " name="medkit"></ion-icon>
+                            In-House Counselling
+                        </h1>
+                        <p class="md:ml-[21.5rem] mb-[50px]">In-house counseling services that offer remote sessions with licensed therapists</p>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </section>
+
+        <section class = "bg-[#E6F7EC]">
+            <br>
+            <section>
+              <h1
+                class="text-black dark:text-white text-[48px] text-center"
+              >
+                <span class="text-black">How,</span
+                ><span class="text-green-500"> it Works</span>
+              </h1>
+              <br>
+      
+              <div class="wrapper">
+                <div class="card">
+                  <div class="poster">
+                    <img
+                      src="{{url_for('static', filename='images/3.png')}}"
+                      alt="career dev"
+                    />
+                  </div>
+                  <div class="details">
+                    <h3
+                      style="
+                        font-family: 'Varela Round' !important;
+                        font-size: 28px !important;
+                      "
+                    >
+                      Take Survey
+                    </h3>
+                    </h2>
+                    <p class="desc" style="font-family: 'Quicksand' !important">
+                      Take a survey, we will diagnose your mental health based on the inputs given
+                    </p>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="poster">
+                    <img
+                    src="{{url_for('static', filename='images/5.png')}}"
+                    alt="career dev"
+                  />
+                  </div>
+                  <div class="details">
+                    <h3
+                    style="
+                      font-family: 'Varela Round' !important;
+                      font-size: 28px !important;
+                    "
+                  >
+                      1:1 Mentorship
+                    </h1>
+                    <h4 style="font-family: 'Varela Round' !important; font-size: 16px;">
+                      Friendly • Guided by Mentors
+                    </h2>
+                    <p class="desc" style="font-family: 'Quicksand' !important">
+                      We aim to provide personalized mentorship to each and every candidate. Our mentors are highly experienced and will guide you through your career at each big or small phase of you career
+                    </p>
+                  </div>
+                </div>
+      
+                <div class="card">
+                  <div class="poster">
+                    <img
+                      src="{{url_for('static', filename='img/jobrecommend.png')}}"
+                      alt="career dev"
+                    />
+                  </div>
+                  <div class="details">
+                    <h3
+                      style="
+                        font-family: 'Varela Round' !important;
+                        font-size: 28px !important;
+                      "
+                    >
+                      Job Insights
+                    </h3>
+                    <h4 style="font-family: 'Varela Round' !important; font-size: 16px;">
+                      Better Companies • Better Roles
+                    </h2>
+                    <p class="desc" style="font-family: 'Quicksand' !important">
+                      Our Job Recommendation will provide you with the best suited roles based on your preference and skills. Gone are the days to do the job search yourself. We will do it for you.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <br><br>
+            </section>
+          </section>
+          <br><br>
+
+
+          <section>
+            <h1 class="text-center text-[30px] md:text-[42px] text-black"
+              style="font-family: 'carmen'; font-weight: 600;">
+              Feeling Depressed ?
+            </h1>
+            <h3 class="mt-5 md:mt-2 text-center text-[15px] md:text-[18px] text-gray-700" style="font-family: 'Varela Round';">
+              Click the button below to heal your  <span class="text-green-500"
+                style="font-family: 'Varela Round'; font-weight: bold;">Rough Journey</span></h3>
+            <br>
+            <div class="flex flex-col justify-center overflow-hidden py-6">
+              <div class="max-w-7xl mx-auto">
+                <a href="https://www.youtube.com/@CodeWithHarry" target="_blank">
+                  <div class="relative group" style="cursor:pointer;">
+                    <div
+                      class="absolute -inset-1 bg-gradient-to-r from-green-500 to-cyan-300 rounded-lg blur opacity-25 dark:opacity-50 group-hover:opacity-100 transition duration-500 group-hover:duration-600"
+                      style="cursor:pointer;"></div>
+                    <div
+                      class="relative bg-white ring-2 ring-gray-900/5 dark:ring-gray-400/20  rounded-lg leading-none flex items-top justify-start space-x-6 border-slate-500/20"
+                      style="
+                    padding-left: 40px;
+                    padding-right: 57px;
+                    padding-top: 18px;
+                    padding-bottom: 18px;
+                " style="cursor:pointer;">
+                      <!-- <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 6.75C6.75 5.64543 7.64543 4.75 8.75 4.75H15.25C16.3546 4.75 17.25 5.64543 17.25 6.75V19.25L12 14.75L6.75 19.25V6.75Z"></path> -->
+                      </svg>
+                      <a href="ml">
+                        <div>
+                          <p class="text-slate-800 items-center justify-center group-hover:text-green-600 transition group-hover:font-semibold group-hover:duration-600 duration-500"
+                            style="font-family: 'varela round'; cursor: pointer;">Try AI Chatting Bot</p>
+                        </div>
+                      </a>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <p class="text-center text-gray-400 text-[20px]">or</p>
+            <div class="flex flex-col justify-center overflow-hidden py-6">
+              <div class="max-w-7xl mx-auto">
+                <a href="html/python-lec/python-lec.html">
+                  <div class="relative group" style="cursor:pointer;">
+                    <div
+                      class="absolute -inset-1 bg-gradient-to-r from-green-600 to-cyan-300 rounded-lg blur opacity-25 dark:opacity-50 group-hover:opacity-100 transition duration-500 group-hover:duration-600"
+                      style="cursor:pointer;"></div>
+                    <div
+                      class="relative px-7 py-6 bg-black ring-2 ring-gray-900/5 dark:ring-gray-400/20  rounded-lg leading-none flex items-top justify-start space-x-6 border-slate-500/20"
+                      style="
+                    padding-left: 40px;
+                    padding-right: 40px;
+                    padding-top: 18px;
+                    padding-bottom: 18px;
+                " style="cursor:pointer;">
+                      <!-- <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 6.75C6.75 5.64543 7.64543 4.75 8.75 4.75H15.25C16.3546 4.75 17.25 5.64543 17.25 6.75V19.25L12 14.75L6.75 19.25V6.75Z"></path> -->
+                      </svg>
+                      <div>
+                        <p class="text-gray-300 items-center justify-center group-hover:text-green-300 transition group-hover:font-semibold group-hover:duration-600 duration-500"
+                          style="font-family: 'varela round'; cursor: pointer;" id="getHere">Seek 1:1 Counsellor Help</p>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+            </div>
+            
+          </section>
+          <br><br>
+
+          <section>
+            <div>
+                
+            </div>
+          </section>
+
+          <br><br>
+          <footer class="text-gray-60 bg-[#E6F7EC]" style = "font-family: 'Varela Round';">
+            <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+                <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                    <img src="{{url_for('static', filename = 'images/mentis.png')}}" width="24px" height="24px" alt="">
+                    <span class="ml-3 text-xl">MantisConnect</span>
+                  </a>
+              <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2024 - MantisConnect
+              </p>
+              <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                <a class="text-gray-500">
+                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                  </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                  </svg>
+                </a>
+                <a class="ml-3 text-gray-500">
+                  <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                    <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+                    <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                  </svg>
+                </a>
+              </span>
+            </div>
+          </footer>
+
     </main>
     </div>
+
+
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </body>
 </html>
