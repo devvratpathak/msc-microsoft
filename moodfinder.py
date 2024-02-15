@@ -3,7 +3,7 @@ import openai
 import time
 
 
-openai.api_key = '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'
+openai.api_key = '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'
 
 def send_message(message):
     response = openai.ChatCompletion.create(
