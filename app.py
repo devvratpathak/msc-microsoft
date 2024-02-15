@@ -7,4 +7,4 @@ app = Flask(__name__)
 def main_page():
     return render_template("index.html")
 
-app.run(debug=True)
+app.run(port = 5000,debug=True)
