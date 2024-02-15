@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='images/logo-removed.png')}}">
+    <link href="{{url_for('static',filename='css/own.css')}}" rel="stylesheet">
+    <title>Mental Care</title>
+</head>
+<body">
+    <header class="text-gray-600 body-font bg-[#E6F7EC]">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <img src="{{url_for('static', filename = 'images/mentis.png')}}" width="24px" height="24px" alt="">
+            <span class="ml-3 text-xl">MantisConnect</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-gray-900">Contact Counsellor</a>
+            <a class="mr-5 hover:text-gray-900">VHelp</a>
+            <a class="mr-5 hover:text-gray-900">Mentor</a>
+          </nav>
+          <button class="px-[12px] py-[7px] inline-flex items-center text-white bg-green-500 border-0 py-1 px-3 focus:outline-none hover:bg-green-700 rounded-[10px] text-base mt-4 md:mt-0">Check Mood
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+      <main>
+        
+
+<div class="mt-[10rem]">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Condition Prediction</title>
+</head>
+<body class="bg-[#E6F7EC]">
+
+    <center class="bg-white medcondform">
+
+        <div>
+    
+            <h1>Medical Condition Prediction</h1>
+        
+            <form method="post" action="{{ url_for('medcond') }}">
+                <label for="age">Age:</label>
+                <input type="text" id="age" name="Age" required><br>
+        
+                <label for="gender">Gender:</label>
+                <select id="gender" name="Gender" required>
+                    <option value="0">Female</option>
+                    <option value="1">Male</option>
+                </select><br>
+        
+                <label for="blood_type">Blood Type:</label>
+                <select id="blood_type" name="Blood_Type" required>
+                    <option value="7">O-</option>
+                    <option value="6">O+</option>
+                    <option value="5">B-</option>
+                    <option value="2">AB+</option>
+                    <option value="0">A+</option>
+                    <option value="3">AB-</option>
+                    <option value="1">A</option>
+                    <option value="4">B+</option>
+                </select><br>
+        
+                <label for="test_results">Test Results:</label>
+                <select id="test_results" name="Test_Results" required>
+                    <option value="1">Inconclusive</option>
+                    <option value="2">Normal</option>
+                    <option value="3">Abnormal</option>
+                </select><br>
+        
+                <input type="submit" value="Predict Medical Condition">
+            </form>
+        </div>
+    </center>
+
+</body>
+</html>
+
+
+</body>
+</html>
+
+</div>
+  
+      </main>
+</body>
+</html>
