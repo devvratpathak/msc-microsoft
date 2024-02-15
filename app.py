@@ -4,9 +4,7 @@ from geopy.geocoders import Nominatim
 
 app = Flask(__name__)
 
-import openai
 
-openai.api_key = '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'
 
 def send_message(message):
     response = openai.ChatCompletion.create(
