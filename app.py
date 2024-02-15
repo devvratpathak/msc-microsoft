@@ -47,6 +47,8 @@ def main_page():
 
 @app.route("/medcond", methods=['GET', 'POST'])
 def medcond():
+    result = None
+
     if request.method == 'POST':
         # Get user input
         user_input = []
@@ -60,11 +62,19 @@ def medcond():
         # Make prediction
         ensemble_model100 = ensemble_model1.predict(input_values)
 
-        # Return the result as a string
-        return f"Medical Condition: {ensemble_model100[0]}"
+        # Set the result to be displayed in the template
+        result = f"Medical Condition: {ensemble_model100[0]}"
 
-    # If the method is GET, render the template
-    return render_template("medicalcondition.html")
+    # Render the template with the result
+    return render_template("medicalcondition.html", result=result)
+
+@app.route("/mentor")
+def mentor():
+    return render_template("mentor.html")
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 
 if __name__ == "__main__":

@@ -29,36 +29,25 @@
       </header>
 
       <main>
-        
+<body class="bg-[#E6F7EC] font-['poppins']">
 
-<div class="mt-[10rem]">
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Medical Condition Prediction</title>
-</head>
-<body class="bg-[#E6F7EC]">
-
-    <center class="bg-white medcondform">
-
-        <div>
+    <div class = "medcondbody">
+        <div class="medcondinside">
     
             <h1>Medical Condition Prediction</h1>
         
-            <form method="post" action="{{ url_for('medcond') }}">
-                <label for="age">Age:</label>
-                <input type="text" id="age" name="Age" required><br>
+            <form class="medcondform" method="post" action="{{ url_for('medcond') }}">
+                <label class = "medcondlabel" for="age">Age:</label>
+                <input class="medcondinput" type="text" id="age" name="Age" required><br>
         
-                <label for="gender">Gender:</label>
-                <select id="gender" name="Gender" required>
+                <label class = "medcondlabel" for="gender">Gender:</label>
+                <select class = "medcondselect"  id="gender" name="Gender" required>
                     <option value="0">Female</option>
                     <option value="1">Male</option>
                 </select><br>
         
-                <label for="blood_type">Blood Type:</label>
-                <select id="blood_type" name="Blood_Type" required>
+                <label class = "medcondlabel" for="blood_type">Blood Type:</label>
+                <select class = "medcondselect"  id="blood_type" name="Blood_Type" required>
                     <option value="7">O-</option>
                     <option value="6">O+</option>
                     <option value="5">B-</option>
@@ -69,17 +58,27 @@
                     <option value="4">B+</option>
                 </select><br>
         
-                <label for="test_results">Test Results:</label>
-                <select id="test_results" name="Test_Results" required>
+                <label class = "medcondlabel" for="test_results">Test Results:</label>
+                <select  class = "medcondselect" id="test_results" name="Test_Results" required>
                     <option value="1">Inconclusive</option>
                     <option value="2">Normal</option>
                     <option value="3">Abnormal</option>
                 </select><br>
         
-                <input type="submit" value="Predict Medical Condition">
+                <input class="medcondinput" type="submit" value="Predict Medical Condition">
             </form>
+
+            <br><br>
+            <div>
+                {% if result %}
+            <div class="prediction-result">
+                <p>{{ result }}</p>
+            </div>
+            {% endif %}
+
+            </div>
         </div>
-    </center>
+    </div>
 
 </body>
 </html>
