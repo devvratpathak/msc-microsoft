@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+@font-face {
+    font-family: 'Avenir';
+    src: url('../fonts/AvenirLTStd-Book.otf');
+}
+
+@font-face {
+    font-family: 'Timepos_Headline';
+    src: url('../fonts/TiemposHeadline-Medium.otf');
+}
+
+.custom-shape-divider-bottom-1707976710 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1707976710 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.custom-shape-divider-bottom-1707976710 .shape-fill {
+    fill: #FFFFFF;
+}
+
+h1{
+    font-family: 'Timepos_Headline';
+}
+
+buttons{
+    font-family: "Varela Round", sans-serif;
+}
