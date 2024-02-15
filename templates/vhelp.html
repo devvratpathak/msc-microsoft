@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VHelp</title>
+    <style>
+        /* Navbar styles */
+        .navbar {
+            background-color: #E6F7EC;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .navigation a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .navigation a:hover {
+            color: #4CAF50;
+        }
+
+        .action-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-button:hover {
+            background-color: #45a049;
+        }
+
+        /* Form styles */
+        .form-container {
+            margin-top: 50px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-container label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .form-container input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        .form-container button[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .hospital-info {
+            list-style: none;
+            padding: 0;
+        }
+
+        .hospital-info li {
+            margin-bottom: 30px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hospital-info h2 {
+            margin-top: 0;
+        }
+
+        .hospital-info img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .hospital-info a {
+            color: #4CAF50;
+            text-decoration: none;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .hospital-info .view-photo {
+            color: #4CAF50;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            border: 1px solid #4CAF50;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-[#E6F7EC]">
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="{{url_for('static', filename='images/mentis.png')}}" alt="Mantis Logo">
+                <span>MantisConnect</span>
+            </div>
+            <nav class="navigation">
+                <a href="#" class="mr-5 hover:text-gray-900">Contact Counsellor</a>
+                <a href="#" class="mr-5 hover:text-gray-900">VHelp</a>
+                <a href="#" class="mr-5 hover:text-gray-900">Mentor</a>
+            </nav>
+            <button class="action-button">Check Mood</button>
+        </div>
+    </header>
+
+    <div style="margin-top: 3rem;" class="form-container">
+        <form action="/vhelp" method="post">
+            <label for="location">Enter your location:</label>
+            <input type="text" id="location" name="location" required>
+            <button type="submit">Search</button>
+            <br>
+        </form>
+        {% if error %}
+            <p>{{ error }}</p>
+        {% endif %}
+        {% if hospitals %}
+            <ul class="hospital-info">
+                {% for hospital in hospitals %}
+                    <li>
+
+                        <p><strong>Name:</strong> {{ hospital.title }}</p>
+                        <p><strong>Address:</strong> {{ hospital.address }}</p>
+                        <p><strong>Contact No:</strong> {{ hospital.phone }}</p>
+                        <p><strong>Website:</strong> <a href="{{ hospital.website }}">{{ hospital.website }}</a></p>
+                        {% if hospital.photos_link %}
+                            <p><strong>Photos:</strong> <a href="{{ hospital.photos_link }}" class="view-photo">View Photo</a></p>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html>

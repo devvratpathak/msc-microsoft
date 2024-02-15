@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+</head>
+<body class="bg-[#E6F7EC]"> <!-- Match the background color with the navbar -->
+    <header class="text-gray-600 body-font bg-[#E6F7EC]">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <img src="{{url_for('static', filename = 'images/mentis.png')}}" width="24px" height="24px" alt="">
+                <span class="ml-3 text-xl">MantisConnect</span>
+            </a>
+            <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+                <a class="mr-5 hover:text-gray-900">Contact Counsellor</a>
+                <a class="mr-5 hover:text-gray-900">VHelp</a>
+                <a class="mr-5 hover:text-gray-900">Mentor</a>
+            </nav>
+            <button class="px-[12px] py-[7px] inline-flex items-center text-white bg-green-500 border-0 py-1 px-3 focus:outline-none hover:bg-green-700 rounded-[10px] text-base mt-4 md:mt-0">Check Mood
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+    </header>
+    <div class="chatbot-container">
+        <div class="chatbot">
+            <h1 class="text-lg font-semibold mb-4">Chatbot</h1>
+            <form action="/mood" method="post">
+                <label for="user_input" class="block mb-2">Enter your message:</label>
+                <input type="text" id="user_input" name="user_input" class="input-field mb-4">
+                <button type="submit" class="submit-btn">Send</button>
+            </form>
+            {% if user_input %}
+                <p class="message text-gray-600 mt-4"><strong>You:</strong> {{ user_input }}</p>
+            {% endif %}
+            {% if bot %}
+                <p class="message text-gray-600 mt-4"><strong>Mantis:</strong> {{ bot }}</p>
+            {% endif %}
+            <!-- Display both messages -->
+            <p class="message text-gray-600 mt-2">Wanna play some games? <a href="/games" style="text-decoration: underline; color: blue;">Games</a></p>
+            <p class="message text-gray-600 mt-2">We suggest you to talk to a counsellor <a href="/counsellor" style="text-decoration: underline; color: blue;">Counsellor</a></p>
+        </div>
+    </div>
+</body>
+</html>
