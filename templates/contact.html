@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{url_for('static',filename='css/output.css')}}" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{{url_for('static',filename='images/logo-removed.png')}}">
+    <link href="{{url_for('static',filename='css/own.css')}}" rel="stylesheet">
+    <title>Mental Care</title>
+</head>
+<body class="bg-[]">
+    <header class="text-gray-600 body-font bg-[E6F7EC]">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+          <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+            <img src="{{url_for('static', filename = 'images/mentis.png')}}" width="24px" height="24px" alt="">
+            <span class="ml-3 text-xl">MantisConnect</span>
+          </a>
+          <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+            <a class="mr-5 hover:text-gray-900">Contact Counsellor</a>
+            <a class="mr-5 hover:text-gray-900">VHelp</a>
+            <a class="mr-5 hover:text-gray-900">Mentor</a>
+          </nav>
+          <button class="px-[12px] py-[7px] inline-flex items-center text-white bg-green-500 border-0 py-1 px-3 focus:outline-none hover:bg-green-700 rounded-[10px] text-base mt-4 md:mt-0">Check Mood
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-1" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7"></path>
+            </svg>
+          </button>
+        </div>
+      </header>
+
+
+      <main>
+        <br><br>
+        <br>
+        <div class="contactusform">
+            <div class="formbold-main-wrapper">
+                <!-- Author: FormBold Team -->
+                <!-- Learn More: https://formbold.com -->
+                <div class="formbold-form-wrapper">
+                  <form method="POST">
+                    <div class="formbold-mb-5">
+                      <label for="name" class="formbold-form-label"> Full Name </label>
+                      <input
+                        type="text"
+                        name="name"
+                        id="name"
+                        placeholder="Full Name"
+                        class="formbold-form-input"
+                      />
+                    </div>
+                    <div class="formbold-mb-5">
+                      <label for="phone" class="formbold-form-label"> Phone Number </label>
+                      <input
+                        type="text"
+                        name="phone"
+                        id="phone"
+                        placeholder="Enter your phone number"
+                        class="formbold-form-input"
+                      />
+                    </div>
+                    <div class="formbold-mb-5">
+                      <label for="email" class="formbold-form-label"> Email Address </label>
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        placeholder="Enter your email"
+                        class="formbold-form-input"
+                      />
+                    </div>
+                    <div class="flex flex-wrap formbold--mx-3">
+                      <div class="w-full sm:w-half formbold-px-3">
+                        <div class="formbold-mb-5 w-full">
+                          <label for="date" class="formbold-form-label"> Date </label>
+                          <input
+                            type="date"
+                            name="date"
+                            id="date"
+                            class="formbold-form-input"
+                          />
+                        </div>
+                      </div>
+                      <div class="w-full sm:w-half formbold-px-3">
+                        <div class="formbold-mb-5">
+                          <label for="time" class="formbold-form-label"> Time </label>
+                          <input
+                            type="time"
+                            name="time"
+                            id="time"
+                            class="formbold-form-input"
+                          />
+                        </div>
+                      </div>
+                    </div>
+              
+                    
+              
+                    <div>
+                      <button class="bg-green-500 formbold-btn">Book Appointment</button>
+                    </div>
+                  </form>
+                </div>
+              </div>              
+        </div>
+      </main>
+
+
+      <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get the form element
+            var form = document.querySelector('form');
+
+            // Add a submit event listener to the form
+            form.addEventListener('submit', function (event) {
+                // Prevent the default form submission
+                event.preventDefault();
+
+                // You can perform additional validation here if needed
+
+                // Display the success alert
+                alert('Appointment booked successfully');
+            });
+        });
+    </script>
+    </body>
+</html>
